@@ -1,3 +1,19 @@
+WEB_DOMAIN, www.WEB_DOMAIN {
+  root /usr/src/app/www
+  tls ISSUER_ADDRESS
+
+  # some security headers
+  header / {
+    X-XSS-Protection "1; mode=block"
+    X-Content-Type-Options "nosniff"
+    X-Frame-Options "DENY"
+
+    -Server
+  }
+
+  log stdout
+}
+
 API_DOMAIN {
   tls ISSUER_ADDRESS
 

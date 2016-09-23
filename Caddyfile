@@ -11,6 +11,13 @@ WEB_DOMAIN, www.WEB_DOMAIN {
     -Server
   }
 
+  rewrite {
+    if {file} not favicon.ico
+    if {file} not files/*
+    if {file} not userimages/*
+    to {path} {path}/ /index.html
+  }
+
   log stdout
 }
 

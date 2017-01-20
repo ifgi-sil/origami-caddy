@@ -5,7 +5,7 @@ WEB_DOMAIN, www.WEB_DOMAIN {
   # some security headers
   header / {
     X-XSS-Protection "1; mode=block"
-    # X-Content-Type-Options "nosniff"
+    X-Content-Type-Options "nosniff"
     X-Frame-Options "DENY"
 
     -Server
@@ -15,6 +15,7 @@ WEB_DOMAIN, www.WEB_DOMAIN {
     if {file} not favicon.ico
     if {file} not files/*
     if {file} not userimages/*
+    if {file} not assets/*
     to {path} {path}/ /index.html
   }
 

@@ -1,5 +1,5 @@
 WEB_DOMAIN, www.WEB_DOMAIN {
-  root /usr/src/app/www
+  root /usr/src/app/dist
   tls ISSUER_ADDRESS
 
   # some security headers

@@ -15,11 +15,12 @@ WEB_DOMAIN, www.WEB_DOMAIN {
     if {file} not favicon.ico
     if {file} not files/*
     if {file} not userimages/*
-    if {file} not assets/*
+    if {file} not assets/**/*
     to {path} {path}/ /index.html
   }
 
-  log stdout
+  log / stdout "{remote} - [{when_iso}] \"{method} {host}{uri} {proto}\" {status} {size}"
+  errors stdout
 }
 
 API_DOMAIN {
@@ -38,5 +39,6 @@ API_DOMAIN {
     transparent
   }
   
-  log stdout
+  log / stdout "{remote} - [{when_iso}] \"{method} {host}{uri} {proto}\" {status} {size}"
+  errors stdout
 }
